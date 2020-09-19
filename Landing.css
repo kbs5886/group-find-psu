@@ -1,0 +1,90 @@
+/*The body class is used to get rid of the default 10px margin*/
+.body{
+    margin: 0;
+}
+
+ /*I'm creating the container class to handle an overall grid 
+    layout to place elements. For better documentation follow this
+    link https://css-tricks.com/snippets/css/complete-guide-grid/#:~:text=CSS%20Grid%20Layout%20%28aka%20%22Grid%22%29%2C%20is%20a%20two-dimensional,never%20done%20a%20very%20good%20job%20of%20it.*/
+.container{ 
+    /*This is to create a workable grid for easy layouts*/
+    display: grid; 
+
+    /*this defines how many grid lines we create for columns*/
+    grid-template-columns: repeat(9 1fr); 
+
+    /*rows, 1fr means 1 division of remaining free space*/
+    grid-template-rows: repeat(9 1fr); 
+
+    /*gap command creates row gap, then column gap, to stop smushing cells together*/
+    gap: 10px 5px;
+}
+
+
+.header{
+    /*overflow hidden makes any elements that go out of the user's device width not appear*/
+    overflow: hidden;
+
+    /*creating a sub-grid within as the header to make button placement and form placement easier*/
+    display: grid;
+    grid-template-columns: subgrid;
+
+    /*header itself takes up the whole top row, and goes 1 column deep */
+    grid-column: 1/end;
+    grid-row: 1/2;
+
+    /*with position relative you can manipulate objects within 
+    subgrid easier, makes subgrid kinda pointless though admittedly*/
+    position: relative;
+
+    /*basic stylization, doesn't look great rn, mess around with it, 
+    find something you like.*/
+    background-color: blue;
+    color: white;
+    font-size: 18px;
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color: white;
+}
+
+/*these next 3 classes pile all the forms and buttons 
+into a singular space when called for their respective elements */
+.sign-up{
+    grid-column: 9/10;
+}
+
+.enter-user{
+    grid-column: 9/10;
+}
+
+.enter-pass{
+    grid-column: 9/10;
+}
+
+
+/*some buttons stylizations, feel free to mess with it*/
+.button{
+    width: 88px;
+    height: 38px;
+    border-radius: 4px;
+    background-color: lightgrey;
+    color: white;
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color: white;
+}
+
+/*some button functionality, make it feel responsive for user */
+.button:hover{
+    width: 92px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: lightblue;
+    cursor: pointer;
+}
+
+/*haven't defined anything to disable the button yet, for future use */
+.button:disabled{
+    width: 84px;
+    height: 36px;
+    border-radius: 4px;
+    background-color: Grey;
+}
