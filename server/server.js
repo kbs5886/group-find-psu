@@ -1,27 +1,29 @@
 require("dotenv").config();
 const express = require("express");
-const { graphqlHTTP } = require("express-graphql");
-const graphqlSchema = require("./graphql/schemas");
-const graphqlResolvers = require("./graphql/resolvers");
-const cookieParser = require("cookie-parser");
-
+const app = express();
 const connectDB = require("./utils/connectDB");
 
-const app = express();
+const PORT = process.env.PORT || 3000;
 
+// Routes
+const authRoutes = require("./routes/auth");
+
+// Utils
 connectDB();
 
-app.use(cookieParser());
+// Middlewares
+app.use(express.json());
 
-app.use("/graphql", (req, res) => {
-    return graphqlHTTP({
-        schema: graphqlSchema,
-        rootValue: graphqlResolvers,
-        graphiql: true,
-        context: { req, res },
-    })(req, res);
+if (process.env.NODE_ENV == "production") {
+    app.use(express.status("../client/Dist"));
+}
+
+app.use("/auth", authRoutes);
+
+app.get("/", (req, res) => {
+    res.json("Home page");
 });
 
-app.listen(process.env.PORT, () =>
-    console.log(`Server is running on http://localhost:${process.env.PORT}`)
-);
+app.listen(PORT, () => {
+    console.log(`Listening on http://localhost:${PORT}`);
+});
