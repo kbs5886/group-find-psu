@@ -15,7 +15,8 @@ connectDB();
 app.use(express.json());
 
 if (process.env.NODE_ENV == "production") {
-    app.use(express.status("./client/Dist"));
+    app.use(express.static("./client/Dist"));
+    console.log("production");
 }
 
 app.use("/auth", authRoutes);
