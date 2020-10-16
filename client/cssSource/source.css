@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .text-data{
+        @apply mt-1 block w-48 bg-gray-300;
+    }
+    .text-data:focus{
+        @apply bg-white;
+    }
+    .submit-button{
+        @apply rounded-md w-48 h-16 cursor-pointer text-white bg-green-500 text-4xl text-center;
+    }
+    .submit-button:hover{
+        @apply bg-blue-400;
+    }
+    .submit-button:disabled{
+        @apply opacity-50;
+    }
+}
