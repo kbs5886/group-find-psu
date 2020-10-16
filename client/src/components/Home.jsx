@@ -1,12 +1,17 @@
 import React from "react";
 import Nav from "./Nav";
+import Slide from './Home/Slide';
+import Main from './Home/Main';
+import Foot from './Foot';
 
 const Home = () => {
     return (
-        <div>
+        <>
             <Nav />
-            <h1>Home</h1>
-        </div>
+            <Slide />
+            <Main />
+            <Foot />
+        </>
     );
 };
 
