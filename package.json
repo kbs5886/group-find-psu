@@ -9,7 +9,7 @@
         "build": "cd client && npm run build",
         "install-server": "npm install",
         "launch": "node server.js",
-        "start": "npm run install-client && npm run install-client-dev && npm run build && npm install-server && npm run launch"
+        "start": "npm run install-server && npm run install-client && npm run build && npm run launch"
     },
     "keywords": [],
     "author": "",
@@ -22,7 +22,6 @@
         "mongoose": "^5.10.9"
     },
     "devDependencies": {
-        "eslint": "^7.11.0",
         "nodemon": "^2.0.4"
     }
 }
