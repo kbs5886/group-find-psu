@@ -4,7 +4,9 @@
     "description": "",
     "main": "server.js",
     "scripts": {
-        "start": "npm install && node server.js"
+        "client": "cd client && npm install && npm run build",
+        "launch": "node server.js",
+        "start": "npm install && npm run client && npm run launch"
     },
     "keywords": [],
     "author": "",
