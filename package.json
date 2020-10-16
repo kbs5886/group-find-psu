@@ -6,10 +6,10 @@
     "scripts": {
         "install-client": "cd client && npm install",
         "install-client-dev": "cd client && npm install --only=dev",
-        "build": "cd client && npm run build",
+        "build-client": "cd client && npm run build",
         "install-server": "npm install",
         "launch": "node server.js",
-        "start": "npm run install-server && npm run install-client && npm run build && npm run launch"
+        "start": "npm run install-server && npm run install-client && npm run build-client && npm run launch"
     },
     "keywords": [],
     "author": "",
