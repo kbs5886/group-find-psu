@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-import './index.css';
-import Header from './Components/Header';
-import EyeCatcher from './Components/EyeCatcher';
-
-function App() {
-  return (
-    <div>
-        <Header/>
-        <EyeCatcher/>
-    </div>  
-  );
-=======
 import React from "react";
 import "./index.css";
 import { Switch, Route } from "react-router-dom";
@@ -19,6 +5,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
+import EyeCatcher from './Components/EyeCatcher';
 
 function App() {
     return (
@@ -34,9 +21,9 @@ function App() {
                     <SignUp />
                 </Route>
             </Switch>
+            <EyeCatcher/>
         </>
     );
->>>>>>> 7a482f361f4ba2eea5ee79cf1738362bdb5fdabe
 }
 
 export default App;

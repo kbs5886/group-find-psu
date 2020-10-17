@@ -11,7 +11,7 @@ const Slide = () => {
                     <div class="text-center md:text-left">
                         <h1 class="text-3xl text-center md:text-5xl md:text-left md:w-2/3 leading-tight">Find groups easily.</h1>
                         <p class="text-lg text-center md:text-left text-gray-600 md:w-2/3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at hendrerit enim. Vivamus lobortis magna odio, vel auctor magna vulputate at.</p>
-                        <button class="mt-3 px-4 py-1 text-white rounded-lg bg-blue-600 uppercase">
+                        <button class="mt-3 px-4 py-1 text-white rounded-lg bg-blue-600 uppercase hover:px-6 py-2">
                             Sign Up
                         </button>
                     </div>
