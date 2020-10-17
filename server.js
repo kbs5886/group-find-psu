@@ -23,10 +23,10 @@ app.use("/auth", authRoutes);
 
 if (process.env.NODE_ENV == "production") {
     // app.use(express.static("./client/build"));
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-    // app.get("*", (req, res) => {
-    //     res.sendFile(path.resolve(__dirname, "/client/index.html"));
-    // });
+    // res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+    });
 }
 
 app.listen(PORT, () => {
