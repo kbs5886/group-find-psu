@@ -2,8 +2,7 @@ import React from 'react'
 
 const Foot = () => {
     return (
-        <>
-            <div className='flex-1 h-48 bg-blue-600 w-full flex-col'>
+        <div className='flex-1 h-48 bg-blue-600 w-full flex-col'>
             <div className='flex flex-row h-48 w-full text-center'>
                 <div className='flex-grow flex flex-col'>
                     Contact Us
@@ -49,8 +48,7 @@ const Foot = () => {
                 </div>
             </div>
         </div>
-        </>
-    )
+    );
 }
 
 export default Foot;

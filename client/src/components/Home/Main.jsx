@@ -2,7 +2,6 @@ import React from 'react'
 
 const Main = () => {
     return (
-        <>
           <div className='flex flex-row h-64 bg-white'>
             <div className='flex-1 h-full text-center text-xl'>
             Why Use Group Find?
@@ -69,8 +68,7 @@ const Main = () => {
                 </div>
             </div>
         </div> 
-        </>
-    )
+    );
 }
 
 export default Main
