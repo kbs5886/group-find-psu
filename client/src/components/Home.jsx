@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "./Nav";
+import Header from "./Header";
 import Slide from './Home/Slide';
 import Main from './Home/Main';
 import Foot from './Foot';
@@ -8,7 +8,7 @@ import { disconnect } from "mongoose";
 const Home = () => {
     return (
         <>
-            <Nav />
+            <Header/>
             <Slide />
             <Main />
             <Foot />
