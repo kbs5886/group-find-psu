@@ -5,7 +5,6 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
-import EyeCatcher from './Components/EyeCatcher';
 
 function App() {
     return (
@@ -21,7 +20,6 @@ function App() {
                     <SignUp />
                 </Route>
             </Switch>
-            <EyeCatcher/>
         </>
     );
 }
