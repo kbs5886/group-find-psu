@@ -22,7 +22,7 @@ function Nav(){
         <NavElement page='/groups' pageName='Groups'/>
         <NavElement page='/projects' pageName='Projects'/>
         <NavElement page='/aboutus' pageName='About Us'/>
-        <NavElement page='/signup' pageName='Sign Up'/>
+        <NavElement page='/register' pageName='Sign Up'/>
         <NavElement page='/login' pageName='Log In'/>
         <a href='/' className='lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 cursor pointer'>
                 <img src={yer} className='rounded-full w-10 h-10 border-2 border-transparent hover:border-indigo-400' alt='yer'/>        
