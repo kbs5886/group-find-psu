@@ -57,7 +57,8 @@ router.post("/login", async (req, res) => {
         process.env.JWT_SECRET,
         (err, token) => {
             if (err) throw err;
-            res.json(token);
+            res.cookie("token", token, { maxAge: 900000, httpOnly: true });
+            res.status(200).json(token);
         }
     );
 });
