@@ -1,7 +1,5 @@
-import React from 'react'
-
-import React from 'react'
-import yer from '../../Images/Yer.jpg'
+import React from 'react';
+import yer from '../../Images/Yer.jpg';
 
 function Person({name, description, picture, picDesc}){
     return(
