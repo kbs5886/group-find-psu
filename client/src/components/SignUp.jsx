@@ -1,31 +1,31 @@
-import React from "react";
-// import axios from "axios";
-// import Nav from "./Nav";
+import React, {useState} from "react";
+import axios from "axios";
 import signupIllus from "../Images/signup_illus.svg";
 
 const SignUp = () => {
-    // const [name, setName] = useState("");
-    // const [email, setEmail] = useState("");
-    // const [password, setPassword] = useState("");
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
-    // const handleSubmit = () => {
-    //     axios
-    //         .post(
-    //             "http://localhost:5000/auth/register",
-    //             { name, email, password },
-    //             {
-    //                 headers: {
-    //                     "content-type": "application/json",
-    //                 },
-    //             }
-    //         )
-    //         .then((res) => {
-    //             console.log(res);
-    //         })
-    //         .catch((err) => {
-    //             console.log(err);
-    //         });
-    // };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        axios
+            .post(
+                "/auth/register",
+                { name, email, password },
+                {
+                    headers: {
+                        "content-type": "application/json",
+                    },
+                }
+            )
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
     return (
         <section class="md:grid md:grid-cols-2 h-screen">
             <div className="md:hidden w-screen bg-blue-600 h-24"></div>
@@ -50,28 +50,35 @@ const SignUp = () => {
                         </h1>
                     </div>
                     <div className="flex flex-col mt-4">
-                        <form action="" className="flex flex-col mt-4">
+                        <form onSubmit={(e) => handleSubmit(e)} className="flex flex-col mt-4">
                             <input
                                 className="w-64 h-8 border border-gray-400 pl-4 mb-3 rounded placeholder-gray-400 text-sm"
                                 type="text"
                                 placeholder="Name"
+                                required
+                                onChange={(e) => setName(e.target.value)}
                             ></input>
                             <input
                                 name="email"
                                 className="w-64 h-8 border border-gray-400 pl-4 mb-3 rounded placeholder-gray-400 text-sm"
-                                type="text"
+                                type="email"
                                 placeholder="Email"
+                                required
+                                onChange={(e) => setEmail(e.target.value)}
                             ></input>
                             <input
                                 className="w-64 h-8 border border-gray-400 pl-4 mb-3 rounded placeholder-gray-400 text-sm"
                                 type="password"
                                 placeholder="Password"
+                                required
+                                minLength="6"
+                                onChange={(e) => setPassword(e.target.value)}
                             ></input>
                             <button className="bg-blue-600 py-1 text-white rounded">
                                 Sign Up
                             </button>
                             <p className="text-sm mt-2 ">
-                                Already have an account?{" "}
+                                Already have an account?
                                 <a
                                     className="text-blue-600 hover:underline"
                                     href="/login"
