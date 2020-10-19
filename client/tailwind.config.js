@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily:{
-        'titillium': ['Titillium'],
+        'titillium': ['Titillium Web'],
       },
       spacing:{
         '72':'18rem',
