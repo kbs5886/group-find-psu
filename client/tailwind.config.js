@@ -8,6 +8,9 @@ module.exports = {
   purge: [],
   theme: {
     extend: {
+      fontFamily:{
+        'titillium': ['Titillium'],
+      },
       spacing:{
         '72':'18rem',
         '84':'21rem',
@@ -16,6 +19,9 @@ module.exports = {
       }
     },
   },
-  variants: {},
+  variants: {
+    backgroundColor: ['responsive', 'hover', 'focus', 'active', 'disabled'],
+    textColor: ['responsive', 'hover', 'focus', 'active', 'disabled'],
+  },
   plugins: []
 }

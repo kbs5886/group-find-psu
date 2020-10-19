@@ -1,5 +1,11 @@
 @tailwind base;
 @tailwind components;
+
+@font-face{
+    font-family: 'Titillium';
+    src: local('Titillium'), url(./fonts/Titillium_Web/TitilliumWeb-Regular.ttf) format('ttf');
+}
+
 @tailwind utilities;
 
 @layer components{
