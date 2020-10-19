@@ -11580,7 +11580,7 @@ video {
 }
 
 .font-titillium {
-  font-family: Titillium;
+  font-family: Titillium Web;
 }
 
 .font-hairline {
@@ -36807,7 +36807,7 @@ video {
   }
 
   .sm\:font-titillium {
-    font-family: Titillium;
+    font-family: Titillium Web;
   }
 
   .sm\:font-hairline {
@@ -61969,7 +61969,7 @@ video {
   }
 
   .md\:font-titillium {
-    font-family: Titillium;
+    font-family: Titillium Web;
   }
 
   .md\:font-hairline {
@@ -87131,7 +87131,7 @@ video {
   }
 
   .lg\:font-titillium {
-    font-family: Titillium;
+    font-family: Titillium Web;
   }
 
   .lg\:font-hairline {
@@ -112293,7 +112293,7 @@ video {
   }
 
   .xl\:font-titillium {
-    font-family: Titillium;
+    font-family: Titillium Web;
   }
 
   .xl\:font-hairline {
