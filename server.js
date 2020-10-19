@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 const authRoutes = require("./routes/auth");
 
 // Utils
-connectDB();
+// connectDB();
 
 // Middlewares
 app.use(cors());

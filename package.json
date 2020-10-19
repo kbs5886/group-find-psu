@@ -5,8 +5,7 @@
     "main": "server.js",
     "scripts": {
         "start": "node server.js",
-        "copyRoute": "cd client/build && cp index.html 200.html",
-        "heroku-postbuild": "npm install --prefix client &&  npm run build:css --prefix client && npm run build --prefix client   && npm run copyRoute"
+        "heroku-postbuild": "npm install --prefix client &&  npm run build:css --prefix client && npm run build --prefix client"
     },
     "keywords": [],
     "author": "",
