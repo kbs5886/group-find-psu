@@ -1,92 +1,91 @@
-import React, { useState } from "react";
-import Nav from "./Nav";
-import axios from "axios";
-import { useHistory } from "react-router-dom";
+import React from "react";
+// import Nav from "./Nav";
+// import axios from "axios";
+// import { useHistory } from "react-router-dom";
+import loginSVG from "../Images/login_illus.svg";
 
 const Login = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const history = useHistory();
+    // const [email, setEmail] = useState("");
+    // const [password, setPassword] = useState("");
+    // const history = useHistory();
 
-    const handleSubmit = () => {
-        axios
-            .post(
-                "http://localhost:5000/auth/login",
-                { email, password },
-                {
-                    headers: {
-                        "content-type": "application/json",
-                    },
-                }
-            )
-            .then((res) => {
-                console.log("sadasdas");
-                console.log(res);
-                history.push("/");
-            })
-            .catch((err) => console.log(err));
-    };
+    // const handleSubmit = () => {
+    //     axios
+    //         .post(
+    //             "http://localhost:5000/auth/login",
+    //             { email, password },
+    //             {
+    //                 headers: {
+    //                     "content-type": "application/json",
+    //                 },
+    //             }
+    //         )
+    //         .then((res) => {
+    //             console.log("sadasdas");
+    //             console.log(res);
+    //             history.push("/");
+    //         })
+    //         .catch((err) => console.log(err));
+    // };
     return (
         <>
-            <Nav />
-            <div className="bg-gray-200">
-                <div className="flex h-screen justify-center flex-col items-center">
-                    <div className="bg-white rounded-lg md:w-4/12 w-8/12 shadow-xl">
-                        <div className="text-center py-4 px-8">
-                            <h1 className="text-3xl pt-2 text-black opacity-50 xs:text-sm">
-                                Login
+            <section class="md:grid md:grid-cols-2 h-screen">
+                <div className="md:flex md:flex-col md:items-center md:justify-center w-screen md:w-full bg-blue-600 h-24 md:h-screen">
+                    <img className="hidden md:flex" src={loginSVG} alt="" />
+                    <h1 className="hidden md:block mt-2 text-white text-2xl">
+                        Don't worry we keep your info safe.
+                    </h1>
+                </div>
+                <div className="flex flex-col mx-8 h-screen mt-4 md:mx-0 md:mt-0 md:bg-white">
+                    <div className="flex justify-between md:mx-4 md:mt-4">
+                        <h2>GROUPFIND</h2>
+                        <a href="/register">
+                            <button className="text-blue-600 border border-gray-400 px-4">
+                                Sign Up
+                            </button>
+                        </a>
+                    </div>
+                    <div className="flex flex-col mt-20 md:mt-32 h-108 items-center justify-center">
+                        <div>
+                            <h1 className="text-4xl font-bold">
+                                Welcome back!
                             </h1>
                         </div>
-                        <div className="text-gray-700">
-                            <div className="flex flex-col mt-1 px-8">
-                                <label for="input1">Email</label>
+                        <div className="flex">
+                            <h1 className="text-gray-400 text-sm uppercase font-light">
+                                Pick up where you left off
+                            </h1>
+                        </div>
+                        <div className="flex flex-col mt-4">
+                            <form action="" className="flex flex-col mt-4">
                                 <input
-                                    id="input1"
+                                    name="email"
+                                    className="w-64 h-8 border border-gray-400 pl-4 mb-3 rounded placeholder-gray-400 text-sm"
                                     type="text"
-                                    className="bg-gray-200 pl-4 rounded h-12"
-                                    onChange={(e) => setEmail(e.target.value)}
-                                />
-                            </div>
-                            <div className="flex flex-col mt-2 px-8">
-                                <label for="input2">Password</label>
+                                    placeholder="Email"
+                                ></input>
                                 <input
-                                    id="input2"
+                                    className="w-64 h-8 border border-gray-400 pl-4 mb-3 rounded placeholder-gray-400 text-sm"
                                     type="password"
-                                    className="bg-gray-200 pl-4 rounded h-12"
-                                    onChange={(e) =>
-                                        setPassword(e.target.value)
-                                    }
-                                />
-                            </div>
-                            <div className="flex mt-8 px-8">
-                                <button
-                                    onClick={() => handleSubmit()}
-                                    className="bg-blue-600 rounded text-white w-full font-extrabold h-12"
-                                >
+                                    placeholder="Password"
+                                ></input>
+                                <button className="bg-blue-600 py-1 text-white rounded">
                                     Log In
                                 </button>
-                            </div>
-                            <div clas="flex mt-12 w-full">
-                                <hr className="border-t border-black opacity-25 w-full p-0 h-1 mt-12" />
-                            </div>
-                            <div className="flex mt-1 w-full">
-                                <div className="flex w-full px-8 pb-6 pt-4 text-center">
-                                    <a href="#" className="w-full">
-                                        Forgot password?
+                                <p className="text-sm mt-2 ">
+                                    Don't have an account?{" "}
+                                    <a
+                                        className="text-blue-600 hover:underline"
+                                        href="/register"
+                                    >
+                                        Sign up here
                                     </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div clas="flex mt-12">
-                        <div className="flex px-8 pb-6 pt-4 flex-col justify-between">
-                            <a href="#" className="text-blue-600">
-                                Don't have an account yet?
-                            </a>
+                                </p>
+                            </form>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </>
     );
 };

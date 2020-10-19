@@ -29,7 +29,7 @@ const Main = () => {
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae aliquam fuga tenetur dolores dolor quaerat magnam quae blanditiis, assumenda maiores in itaque, totam consectetur. Ipsam aperiam mollitia beatae ipsum dolorem.
             </span>
             <div className='flex flex-row w-full h-36 items-center justify-center py-4'>
-                <a className='px-4 ' onMouseEnter={() => setButtonArrow(true)} onMouseLeave={() => setButtonArrow(false)}>
+                <a href="/register" className='px-4 ' onMouseEnter={() => setButtonArrow(true)} onMouseLeave={() => setButtonArrow(false)}>
                     <button className='flex flex-row bg-blue-500 rounded-lg px-2 h-10 items-center'>
                         <span className='px-2'>Get Started</span> 
                         { transitions.map(({item, key, props}) => 
@@ -44,7 +44,7 @@ const Main = () => {
                         }
                     </button>
                 </a>
-                <a className='px-4'>
+                <a href="/aboutus" className='px-4'>
                     <button className='bg-blue-500 rounded-lg px-4 h-10'>
                         About Us
                     </button>

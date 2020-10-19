@@ -2,7 +2,6 @@ import React from "react";
 import Header from "./Header";
 import Main from './Home/Main';
 import Foot from './Foot';
-import { disconnect } from "mongoose";
 
 const Home = () => {
     return (
