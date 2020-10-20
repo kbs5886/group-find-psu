@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import signupIllus from "../Images/signup_illus.svg";
 
@@ -23,7 +23,7 @@ const SignUp = () => {
                 console.log(res);
             })
             .catch((err) => {
-                console.log(err);
+                console.log(err.response);
             });
     };
     return (
@@ -50,7 +50,10 @@ const SignUp = () => {
                         </h1>
                     </div>
                     <div className="flex flex-col mt-4">
-                        <form onSubmit={(e) => handleSubmit(e)} className="flex flex-col mt-4">
+                        <form
+                            onSubmit={(e) => handleSubmit(e)}
+                            className="flex flex-col mt-4"
+                        >
                             <input
                                 className="w-64 h-8 border border-gray-400 pl-4 mb-3 rounded placeholder-gray-400 text-sm"
                                 type="text"
