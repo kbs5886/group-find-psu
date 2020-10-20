@@ -4,7 +4,7 @@ import {useTransition, animated} from 'react-spring';
 function NavElement(props){
     
     return(
-        <a href={props.page} className='py-5 px-4 block sm:hover:text-blue-500 active:text-blue-500 md:border-0 border-black border-b'>
+        <a href={props.page} className='py-5 px-4 text-dark-gray text-lg block sm:hover:text-blue-500 active:text-blue-500 md:border-0 border-black border-b'>
             {props.pageName}
         </a>
     );
