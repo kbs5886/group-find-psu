@@ -42,7 +42,7 @@ function Nav(){
                                 key={key} 
                                 style={props}
                                 className='fixed top-0 left-0 bg-white h-full w-1/2 shadow-lg text-xl z-50'>
-                                <NavElement page='/home' pageName='Home'/>
+                                <NavElement page='/' pageName='Home'/>
                                 <NavElement page='/dashboard' pageName='Dashboard'/>
                                 <NavElement page='/aboutus' pageName='About Us'/>
                             </animated.div>
@@ -58,7 +58,7 @@ function Nav(){
                             )
                         }
         <div className='hidden md:flex-1 md:flex'>
-            <NavElement page='/home' pageName='Home'/>
+            <NavElement page='/' pageName='Home'/>
             <NavElement page='/dashboard' pageName='Dashboard'/>
             <NavElement page='/aboutus' pageName='About Us'/>
         </div>

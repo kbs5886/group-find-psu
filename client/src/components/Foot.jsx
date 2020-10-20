@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Register = (
-    <svg 
-    className="w-8 h-8 rounded-full border-2 border-black" 
+    <svg
+    className="w-8 md:w-12 h-12 md:h-12 rounded-full border-2 border-black" 
     fill="none" stroke="currentColor" 
     viewBox="0 0 24 24" 
     xmlns="http://www.w3.org/2000/svg">
@@ -16,7 +16,7 @@ const Register = (
 
 const Search = (
     <svg 
-    className="w-8 h-8 rounded-full border-2 border-black" 
+    className="w-8 md:w-12 h-8 md:h-12 rounded-full border-2 border-black" 
     fill="none" 
     stroke="currentColor" 
     viewBox="0 0 24 24" 
@@ -31,7 +31,7 @@ const Search = (
 
 const Like = (
     <svg 
-    className="w-8 h-8 rounded-full border-2 border-black" 
+    className="w-8 md:w-12 h-8 md:h-12 rounded-full border-2 border-black" 
     fill="none" 
     stroke="currentColor" 
     viewBox="0 0 24 24" 
@@ -46,7 +46,7 @@ const Like = (
 
 const Users = (
     <svg 
-    className="w-8 h-8 rounded-full border-2 border-black" 
+    className="w-8 md:w-12 h-8 md:h-12 rounded-full border-2 border-black" 
     fill="none" 
     stroke="currentColor" 
     viewBox="0 0 24 24" 
