@@ -4,10 +4,6 @@ import { useHistory } from "react-router-dom";
 import loginSVG from "../Images/login_illus.svg";
 import Error from "./Error";
 import TextInput from './FormElements/TextInput';
-<<<<<<< HEAD
-
-=======
->>>>>>> 590111f6c5afec2c0b00f61ab7067bd02f1a40b7
 
 const Login = () => {
     const history = useHistory();
