@@ -10,7 +10,7 @@ router.post("/register", async (req, res) => {
     const registered = await User.findOne({ email });
 
     if (registered) {
-        res.status(401).json({ err: "Already registered" });
+        res.status(400).json({ err: "Already registered" });
         return;
     }
 
