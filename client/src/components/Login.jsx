@@ -1,12 +1,15 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import loginSVG from "../Images/login_illus.svg";
+import Error from "./Error";
 
 const Login = () => {
+    const history = useHistory();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    // const history = useHistory();
+    const [isError, setIsError] = useState(false);
+    const [error, setError] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -21,14 +24,16 @@ const Login = () => {
                 }
             )
             .then((res) => {
-                console.log("sadasdas");
-                console.log(res);
-                // history.push("/");
+                history.push("/");
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {
+                setError(err.response.data.err);
+                setIsError(true);
+            });
     };
     return (
         <>
+            {isError && <Error message={error} />}
             <section class="md:grid md:grid-cols-2 h-screen">
                 <div className="md:flex md:flex-col md:items-center md:justify-center w-screen md:w-full bg-blue-600 h-24 md:h-screen">
                     <img className="hidden md:flex" src={loginSVG} alt="" />
@@ -57,7 +62,10 @@ const Login = () => {
                             </h1>
                         </div>
                         <div className="flex flex-col mt-4">
-                            <form onSubmit={(e) => handleSubmit(e)} className="flex flex-col mt-4">
+                            <form
+                                onSubmit={(e) => handleSubmit(e)}
+                                className="flex flex-col mt-4"
+                            >
                                 <input
                                     name="email"
                                     className="w-64 h-8 border border-gray-400 pl-4 mb-3 rounded placeholder-gray-400 text-sm"
@@ -72,13 +80,15 @@ const Login = () => {
                                     placeholder="Password"
                                     required
                                     minLength="6"
-                                    onChange={(e) => setPassword(e.target.value)}
+                                    onChange={(e) =>
+                                        setPassword(e.target.value)
+                                    }
                                 ></input>
                                 <button className="bg-blue-600 py-1 text-white rounded">
                                     Log In
                                 </button>
                                 <p className="text-sm mt-2 ">
-                                    Don't have an account?
+                                    Don't have an account? {""}
                                     <a
                                         className="text-blue-600 hover:underline"
                                         href="/register"
