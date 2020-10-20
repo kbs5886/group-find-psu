@@ -2,7 +2,7 @@ import React from 'react';
 
 const Register = (
     <svg
-    className="w-8 md:w-12 h-12 md:h-12 rounded-full border-2 border-black" 
+    className="w-8 md:w-12 h-8 md:h-12 rounded-full border-2 border-black" 
     fill="none" stroke="currentColor" 
     viewBox="0 0 24 24" 
     xmlns="http://www.w3.org/2000/svg">
@@ -101,7 +101,7 @@ const StepsHorizontal = (props) => {
         <div 
         className='flex flex-row justify-center text-left m-0'>
             <div 
-            className='flex flex-col m-0'>
+            className='flex flex-col m-0 w-12'>
                 <div>
                 {props.icon}
                 </div>
@@ -110,7 +110,7 @@ const StepsHorizontal = (props) => {
                 </span>
             </div>
             <svg 
-            className="h-5 m-0" 
+            className="h-8 w-32 md:w-48 m-0" 
             fill="none" 
             stroke="currentColor" 
             xmlns="http://www.w3.org/2000/svg">
@@ -118,7 +118,7 @@ const StepsHorizontal = (props) => {
                 strokeLinecap="round" 
                 strokeLinejoin="round" 
                 strokeWidth="2" 
-                d="M0 16H300"/>
+                d="M0 24H300"/>
             </svg>
         </div>
     )
@@ -127,14 +127,14 @@ const StepsHorizontal = (props) => {
 const Foot = () => {
     return (
         <div className='contents'>
-            <div className='hidden md:flex md:flex-row m-40 justify-center'>
+            <div className='hidden md:flex md:flex-row mt-40 ml-4 justify-center'>
                 <StepsHorizontal icon={Register} section='Register'/>
                 <StepsHorizontal icon={Search} section='Search for Projects'/>
                 <StepsHorizontal icon={Like} section='Save Interests'/>
                 <div 
                 className='flex flex-row justify-between'>
                     <div 
-                    className='flex flex-col'>
+                    className='flex flex-col w-12'>
                         {Users}
                         <span className='px-2'>
                         Find Groups
