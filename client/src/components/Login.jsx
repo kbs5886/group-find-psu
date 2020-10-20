@@ -4,12 +4,10 @@ import { useHistory } from "react-router-dom";
 import loginSVG from "../Images/login_illus.svg";
 import Error from "./Error";
 import TextInput from './FormElements/TextInput';
-import {useSpring, animated} from 'react-spring';
 
 const Login = () => {
     const history = useHistory();
 
-    // Handles personal Data for storage
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isError, setIsError] = useState(false);

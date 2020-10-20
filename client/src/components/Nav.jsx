@@ -4,7 +4,7 @@ import {useTransition, animated} from 'react-spring';
 function NavElement(props){
     
     return(
-        <a href={props.page} className='py-5 px-4 block sm:hover:text-blue-500 active:text-blue-500 md:border-0 border-black border-b'>
+        <a href={props.page} className='py-5 px-4 text-dark-gray text-lg block sm:hover:text-blue-500 active:text-blue-500 md:border-0 border-black border-b'>
             {props.pageName}
         </a>
     );
@@ -42,7 +42,7 @@ function Nav(){
                                 key={key} 
                                 style={props}
                                 className='fixed top-0 left-0 bg-white h-full w-1/2 shadow-lg text-xl z-50'>
-                                <NavElement page='/home' pageName='Home'/>
+                                <NavElement page='/' pageName='Home'/>
                                 <NavElement page='/dashboard' pageName='Dashboard'/>
                                 <NavElement page='/aboutus' pageName='About Us'/>
                             </animated.div>

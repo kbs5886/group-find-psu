@@ -30,16 +30,16 @@ const Main = () => {
 
     return (
         <div className='contents'>
-            <span className='block text-3xl py-4'>
+            <span className='block text-6xl font-bold py-4'>
                 Finding Groups Made Easy
             </span>
-            <span className='block max-w-2xl'>
+            <span className='block max-w-2xl text-1xl'>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae aliquam fuga tenetur dolores dolor quaerat magnam quae blanditiis, assumenda maiores in itaque, totam consectetur. Ipsam aperiam mollitia beatae ipsum dolorem.
             </span>
             <div className='flex flex-row w-full h-36 items-center justify-center py-4'>
                 <a href="/register" className='px-4 ' onMouseEnter={() => setButtonArrow(true)} onMouseLeave={() => setButtonArrow(false)}>
                     <button className='flex flex-row bg-blue-600 text-white rounded-3xl px-2 h-10 items-center hover:bg-blue-400 hover:text-gray-800'>
-                        <span className='px-2'>Get Started</span> 
+                        <span className='px-6'>Get Started</span> 
                         { transitions.map(({item, key, props}) => 
                             item&& 
                             <animated.div 
@@ -52,8 +52,8 @@ const Main = () => {
                         }
                     </button>
                 </a>
-                <a href="/aboutus" className='px-4'>
-                    <button className='bg-blue-600 text-white rounded-3xl px-4 h-10 hover:bg-blue-400 hover:text-gray-800'>
+                <a href="/aboutus">
+                    <button className='bg-light-gray font-semibold text-black rounded-3xl px-8 h-10 hover:bg-blue-400 hover:text-gray-800'>
                         About Us
                     </button>
                 </a>

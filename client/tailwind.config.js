@@ -15,6 +15,10 @@ module.exports = {
       fontFamily:{
         'titillium': ['Titillium Web'],
       },
+      colors: {
+        'light-gray': "#DCE0E3",
+        'dark-gray': "#6A6A6A"
+      },
       spacing:{
         '72':'18rem',
         '84':'21rem',
