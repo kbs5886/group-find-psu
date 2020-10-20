@@ -4,7 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
-import Error from "./components/Error";
+import Dashboard from "./components/Dashboard";
 
 function App() {
     return (
@@ -19,8 +19,9 @@ function App() {
                 <Route path="/register">
                     <SignUp />
                 </Route>
-                <Route path="/error">
-                    <Error />
+
+                <Route path="/dashboard">
+                    <Dashboard />
                 </Route>
             </Switch>
         </>
