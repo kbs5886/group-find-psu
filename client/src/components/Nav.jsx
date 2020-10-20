@@ -58,7 +58,7 @@ function Nav(){
                             )
                         }
         <div className='hidden md:flex-1 md:flex'>
-            <NavElement page='/home' pageName='Home'/>
+            <NavElement page='/' pageName='Home'/>
             <NavElement page='/dashboard' pageName='Dashboard'/>
             <NavElement page='/aboutus' pageName='About Us'/>
         </div>
