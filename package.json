@@ -5,6 +5,7 @@
     "main": "server.js",
     "scripts": {
         "start": "node server.js",
+        "production": "npm run heroku-postbuild && NODE_ENV=production npm run start",
         "heroku-postbuild": "npm install --prefix client &&  npm run build:css --prefix client && npm run build --prefix client"
     },
     "keywords": [],

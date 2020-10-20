@@ -63,9 +63,9 @@ router.post("/login", async (req, res) => {
     );
 });
 
-router.get("/posts", checkAuth, (req, res) => {
-    res.json({
-        status: "Authorized",
+router.get("/status", checkAuth, (req, res) => {
+    res.status(200).json({
+        status: "Logged",
     });
 });
 

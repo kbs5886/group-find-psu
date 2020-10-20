@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import loginSVG from "../Images/login_illus.svg";
@@ -10,6 +10,13 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [isError, setIsError] = useState(false);
     const [error, setError] = useState("");
+
+    useEffect(() => {
+        axios.get("/auth/status").then(() => {
+            console.log("Already logged in...redirecting...");
+            history.push("/");
+        });
+    }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -34,7 +41,7 @@ const Login = () => {
     return (
         <>
             {isError && <Error message={error} />}
-            <section class="md:grid md:grid-cols-2 h-screen">
+            <section className="md:grid md:grid-cols-2 h-screen">
                 <div className="md:flex md:flex-col md:items-center md:justify-center w-screen md:w-full bg-blue-600 h-24 md:h-screen">
                     <img className="hidden md:flex" src={loginSVG} alt="" />
                     <h1 className="hidden md:block mt-2 text-white text-2xl">

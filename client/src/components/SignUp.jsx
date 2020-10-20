@@ -13,6 +13,13 @@ const SignUp = () => {
     const [isError, setIsError] = useState(false);
     const [error, setError] = useState("");
 
+    useEffect(() => {
+        axios.get("/auth/status").then(() => {
+            console.log("Already logged in...redirecting...");
+            history.push("/");
+        });
+    }, []);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         axios

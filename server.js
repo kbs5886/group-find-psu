@@ -22,6 +22,7 @@ app.use(express.json());
 app.use("/auth", authRoutes);
 
 if (process.env.NODE_ENV == "production") {
+    console.log("production");
     app.use(express.static("./client/build"));
     app.get("*", (req, res) => {
         res.sendFile(__dirname + "/client/build/index.html");
