@@ -59,7 +59,7 @@ const Users = (
     </svg>
 );
 
-const Steps = (props) => {
+const StepsVert = (props) => {
     return(
         <div 
         className='flex flex-row justify-center'>
@@ -96,14 +96,80 @@ const Steps = (props) => {
         </div>
     )
 }
+const StepsHorizontal = (props) => {
+    return(
+        <div 
+        className='flex flex-row justify-center text-left m-0'>
+            <div 
+            className='flex flex-col m-0'>
+                <div>
+                {props.icon}
+                </div>
+                <span>
+                {props.section}
+                </span>
+            </div>
+            <svg 
+            className="h-5 m-0" 
+            fill="none" 
+            stroke="currentColor" 
+            xmlns="http://www.w3.org/2000/svg">
+                <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth="2" 
+                d="M0 16H300"/>
+            </svg>
+        </div>
+    )
+}
 
 const Foot = () => {
     return (
         <div className='contents'>
-            <Steps icon={Register} section='Register'/>
-            <Steps icon={Search} section='Search for Projects'/>
-            <Steps icon={Like} section='Save Interests'/>
-            <Steps icon={Users} section='Find Groups'/>
+            <div className='hidden md:flex md:flex-row m-40 justify-center'>
+                <StepsHorizontal icon={Register} section='Register'/>
+                <StepsHorizontal icon={Search} section='Search for Projects'/>
+                <StepsHorizontal icon={Like} section='Save Interests'/>
+                <div 
+                className='flex flex-row justify-between'>
+                    <div 
+                    className='flex flex-col'>
+                        {Users}
+                        <span className='px-2'>
+                        Find Groups
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div className='md:hidden pt-20'>
+                <StepsVert icon={Register} section='Register'/>
+                <StepsVert icon={Search} section='Search for Projects'/>
+                <StepsVert icon={Like} section='Save Interests'/>
+                <div 
+                className='flex flex-row justify-center'>
+                    <div 
+                    className='flex flex-col'>
+                        {Users}
+                    </div>
+                    <div className='flex flex-col'>
+                        <svg 
+                        class="w-48 h-4" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        xmlns="http://www.w3.org/2000/svg">
+                            <path 
+                            strokeLinecap="round" 
+                            strokeLinejoin="round" 
+                            strokeWidth="2" 
+                            d="M0 16H48"/>
+                        </svg>
+                        <span className='px-2'>
+                            Find Groups
+                        </span>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

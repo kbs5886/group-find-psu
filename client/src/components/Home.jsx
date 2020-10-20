@@ -5,10 +5,12 @@ import Foot from './Foot';
 
 const Home = () => {
     return (
-        <div className='flex flex-col w-full h-full font-titillium'>
-            <Header/>
-            <Main />
-            <Foot />
+        <div className='contents'>
+                <Header className='mb-40'/>
+            <div className='flex flex-col w-full h-full font-titillium items-center text-center'>
+                <Main />
+                <Foot />
+            </div>
         </div>
     );
 };

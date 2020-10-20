@@ -2,7 +2,7 @@ import React from "react";
 
 const Error = ({ message }) => {
     return (
-        <>
+        <div className='contents'>
             <div className="flex absolute w-full justify-center">
                 <div class="alert-content ml-4 bg-red-200 p-5 rounded border-b-2 border-red-300">
                     <div className="flex">
@@ -30,7 +30,7 @@ const Error = ({ message }) => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

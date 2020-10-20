@@ -3,9 +3,13 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import loginSVG from "../Images/login_illus.svg";
 import Error from "./Error";
+import TextInput from './FormElements/TextInput';
+import {useSpring, animated} from 'react-spring';
 
 const Login = () => {
     const history = useHistory();
+
+    // Handles personal Data for storage
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isError, setIsError] = useState(false);
@@ -39,7 +43,7 @@ const Login = () => {
             });
     };
     return (
-        <>
+        <div className='contents'>
             {isError && <Error message={error} />}
             <section className="md:grid md:grid-cols-2 h-screen">
                 <div className="md:flex md:flex-col md:items-center md:justify-center w-screen md:w-full bg-blue-600 h-24 md:h-screen">
@@ -50,7 +54,9 @@ const Login = () => {
                 </div>
                 <div className="flex flex-col mx-8 h-screen mt-4 md:mx-0 md:mt-0 md:bg-white">
                     <div className="flex justify-between md:mx-4 md:mt-4">
-                        <h2>GROUPFIND</h2>
+                        <a href='/'>
+                            <h2>GROUPFIND</h2>
+                        </a>
                         <a href="/register">
                             <button className="text-blue-600 border border-gray-400 px-4">
                                 Sign Up
@@ -73,25 +79,20 @@ const Login = () => {
                                 onSubmit={(e) => handleSubmit(e)}
                                 className="flex flex-col mt-4"
                             >
-                                <input
-                                    name="email"
-                                    className="w-64 h-8 border border-gray-400 pl-4 mb-3 rounded placeholder-gray-400 text-sm"
-                                    type="email"
-                                    placeholder="Email"
-                                    required
-                                    onChange={(e) => setEmail(e.target.value)}
-                                ></input>
-                                <input
-                                    className="w-64 h-8 border border-gray-400 pl-4 mb-3 rounded placeholder-gray-400 text-sm"
-                                    type="password"
-                                    placeholder="Password"
-                                    required
-                                    minLength="6"
-                                    onChange={(e) =>
-                                        setPassword(e.target.value)
-                                    }
-                                ></input>
-                                <button className="bg-blue-600 py-1 text-white rounded">
+                                <TextInput 
+                                fieldName='Email:'
+                                type='email' 
+                                placeholder='Email'
+                                required='true' 
+                                onChange={(e) => setEmail(e.target.value)}/>
+                                <TextInput 
+                                fieldName='Password:' 
+                                type='password'
+                                placeholder='Password' 
+                                required='true'
+                                minLength='6' 
+                                onChange={(e) =>setPassword(e.target.value)}/>
+                                <button className="bg-blue-600 py-1 text-white rounded-2xl hover:bg-blue-400 hover:text-gray-800 mt-3">
                                     Log In
                                 </button>
                                 <p className="text-sm mt-2 ">
@@ -108,7 +109,7 @@ const Login = () => {
                     </div>
                 </div>
             </section>
-        </>
+        </div>
     );
 };
 
