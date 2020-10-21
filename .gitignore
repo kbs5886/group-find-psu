@@ -1,6 +1,7 @@
 node_modules/
 .env
 req.REST
+tes.REST
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies

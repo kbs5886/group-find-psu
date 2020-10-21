@@ -1,5 +1,0 @@
-GET http://localhost:5000/auth/status
-
-<request>
-    <token>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJuYW1lIjoidGVzdEB0ZXN0LmNvbSIsImlhdCI6MTYwMzE2NTUyMH0.YjP6973RlWtbs7Rrd-RK8W_309UJWYdX3e6CCVce63k</token>
-</request>
