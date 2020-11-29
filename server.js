@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 5000;
 
 // Routes
 const authRoutes = require("./routes/auth");
+const groupRoutes = require("./routes/group");
 
 // Utils
 connectDB();
@@ -20,6 +21,7 @@ app.use(cookieParser());
 app.use(express.json());
 
 app.use("/auth", authRoutes);
+app.use("/group", groupRoutes);
 
 if (process.env.NODE_ENV == "production") {
     console.log("production");
