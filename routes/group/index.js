@@ -2,7 +2,7 @@ const router = require("express").Router();
 const Group = require("../../schemas/Group");
 const checkAuth = require("../../utils/checkAuth");
 
-router.post("/create", checkAuth, async(res,req) => {
+router.post("/create", async(req,res) => {
 
     let {name,owner, tags, category,requirements} = req.body;
 
@@ -15,7 +15,7 @@ router.post("/create", checkAuth, async(res,req) => {
 
     const group = new Group({
         name,
-        owner,
+        // owner,
         tags,
         category,
         requirements
