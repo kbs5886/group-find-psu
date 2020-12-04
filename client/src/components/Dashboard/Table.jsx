@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Row from "./Row";
+import axios from 'axios';
 
 const Table = () => {
+    
     return (
         <>
             <div className="antialiased">

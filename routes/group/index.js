@@ -3,7 +3,7 @@ const Group = require("../../schemas/Group");
 const checkAuth = require("../../utils/checkAuth");
 
 router.post("/create", async(req,res) => {
-
+    console.log("REQUIEST")
     let {name, tags, category,requirements,contact} = req.body;
 
     const alreadyExists = await Group.findOne({name});
@@ -28,5 +28,13 @@ router.post("/create", async(req,res) => {
     });
 
 });
+
+router.get("/all", (req,res) => {
+    Group.find((err,data) => {
+        if(err) throw err;
+        console.log(data);
+        res.status(200).json(data);
+    })
+})
 
 module.exports = router;
