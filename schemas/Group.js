@@ -8,6 +8,6 @@ const Group = Schema({
     category: {type: String, required: true},
     requirements: {type: String, required: true},
     contact: {type: String, required: true}
-});
+}, {timestamps: true});
 
 module.exports = mongoose.model("group", Group);

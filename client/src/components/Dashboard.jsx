@@ -1,11 +1,17 @@
-import React from "react";
+import React, {useState,useEffect} from "react";
 import Table from "./Dashboard/Table";
 import Nav from "./Dashboard/Nav";
 import CreateGroup from "./Dashboard/CreateGroup";
+import axios from 'axios'
 
 const Dashboard = () => {
-    const [showModal, setShowModal] = React.useState(true);
-
+    const [showModal, setShowModal] = React.useState(false);
+    const [data,setData] = useState([]);
+    useEffect(() => {
+        axios.get("https://psugroupfind.herokuapp.com/group/all").then(res => {
+            setData(res.data);
+        })
+    },[])
     return (
         <div className="bg-gray-200">
             <Nav />
@@ -51,7 +57,7 @@ const Dashboard = () => {
                     </button>
                 </div>
             </div>
-            <Table />
+            <Table data={data} />
         </div>
     );
 };

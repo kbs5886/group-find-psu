@@ -3,7 +3,7 @@ const Group = require("../../schemas/Group");
 const checkAuth = require("../../utils/checkAuth");
 
 router.post("/create", async(req,res) => {
-    console.log("REQUIEST")
+    console.log(req.headers.cookie)
     let {name, tags, category,requirements,contact} = req.body;
 
     const alreadyExists = await Group.findOne({name});

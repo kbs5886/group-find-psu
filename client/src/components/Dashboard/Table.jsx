@@ -2,8 +2,10 @@ import React, {useEffect, useState} from "react";
 import Row from "./Row";
 import axios from 'axios';
 
-const Table = () => {
+const Table = (props) => {
+    const data = props.data;
     
+   
     return (
         <>
             <div className="antialiased">
@@ -82,6 +84,9 @@ const Table = () => {
                                             profile="https://images.unsplash.com/photo-1522609925277-66fea332c575?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&h=160&w=160&q=80"
                                             contact="Snapchat: @Alonzo"
                                         />
+                                        {data.length > 0 && data.map(d => 
+                                            <Row name={d.name} owner="Test" role="N/A" tags={d.tags} category={d.category} date={d.date} required={d.required} contact={d.contact} />
+                                            ) }
                                     </tbody>
                                 </table>
                                 <div className="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
