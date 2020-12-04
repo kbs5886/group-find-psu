@@ -4,7 +4,7 @@ const checkAuth = require("../../utils/checkAuth");
 
 router.post("/create", async(req,res) => {
 
-    let {name,owner, tags, category,requirements} = req.body;
+    let {name, tags, category,requirements,contact} = req.body;
 
     const alreadyExists = await Group.findOne({name});
 
@@ -18,7 +18,8 @@ router.post("/create", async(req,res) => {
         // owner,
         tags,
         category,
-        requirements
+        requirements,
+        contact
     })
 
     group.save((err) => {

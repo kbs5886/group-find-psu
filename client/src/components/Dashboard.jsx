@@ -1,11 +1,15 @@
 import React from "react";
 import Table from "./Dashboard/Table";
 import Nav from "./Dashboard/Nav";
+import CreateGroup from "./Dashboard/CreateGroup";
 
 const Dashboard = () => {
+    const [showModal, setShowModal] = React.useState(true);
+
     return (
         <div className="bg-gray-200">
             <Nav />
+            <CreateGroup showModal={showModal} setShowModal={setShowModal}  />
             <div className="flex flex-col md:flex-row items-center md:items-start md:justify-between mx-4 mt-8 md:mx-24">
                 <div className="flex">
                     <div className="h-12 w-12 rounded-full bg-gray-500">
@@ -42,7 +46,7 @@ const Dashboard = () => {
                     <button className="uppercase md:hidden mb-2 bg-gray-500 px-5 text-black text-sm py-1">
                         Search
                     </button>
-                    <button className="uppercase bg-black px-5 text-white text-sm py-1">
+                    <button onClick={() => setShowModal(true)} className="uppercase bg-black px-5 text-white text-sm py-1">
                         Create group
                     </button>
                 </div>

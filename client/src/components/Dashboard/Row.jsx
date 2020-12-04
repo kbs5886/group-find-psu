@@ -1,6 +1,6 @@
 import React from "react";
 
-const Row = ({name, profile,owner, role, date,tags,category,required}) => {
+const Row = ({name, profile,owner, role, date,tags,category,required,contact}) => {
     return (
         <>
             <tr>
@@ -44,6 +44,11 @@ const Row = ({name, profile,owner, role, date,tags,category,required}) => {
                 <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                     <p className="text-gray-900 whitespace-no-wrap">
                         {required}
+                    </p>
+                </td>
+                <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                    <p className="text-gray-900 whitespace-no-wrap">
+                        {contact}
                     </p>
                 </td>
             </tr>
