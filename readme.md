@@ -22,7 +22,7 @@ https://www.mongodb.com/
     NODE_ENV=
 
 ## File Structure 🗄️
-``
+
 ├── client\
 |  ├── cssSource\
 |  ├── package-lock.json\
@@ -46,7 +46,7 @@ https://www.mongodb.com/
 └── utils\
    ├── checkAuth.js\
    └── connectDB.js
-``
+
 
 
 ## Installation ⚙️
