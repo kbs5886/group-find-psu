@@ -77,9 +77,9 @@ const Nav = () => {
                                 </a>
                             </li> */}
                         </ul>
-                        <button onClick={() => handleLogout()} className="px-4 py-1 font-semibold rounded bg-black text-white">
+                        {/* <button onClick={() => handleLogout()} className="px-4 py-1 font-semibold rounded bg-black text-white">
                             Log Out
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </nav>
