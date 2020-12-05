@@ -12,7 +12,7 @@ const TextInput = (props) => {
             placeholder={props.placeholder}
             required = {props.required}
             minLength = {props.minLength}
-            onChange = {props.change}
+            onChange = {props.onChange}
             />
         </label>
     )
