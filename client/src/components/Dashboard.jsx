@@ -20,7 +20,9 @@ const Dashboard = () => {
         })
 
         axios.get("https://psugroupfind.herokuapp.com/auth/name").then(res => {
-            setName(res);
+            // setName(res);
+            console.log(res.data)
+            setName(res.data)
         })
     },[])
     return (
