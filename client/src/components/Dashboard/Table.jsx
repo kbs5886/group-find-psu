@@ -4,8 +4,7 @@ import axios from 'axios';
 
 const Table = (props) => {
     const data = props.data;
-    
-   
+
     return (
         <>
             <div className="antialiased">
@@ -85,7 +84,8 @@ const Table = (props) => {
                                             contact="Snapchat: @Alonzo"
                                         />
                                         {data.length > 0 && data.map(d => 
-                                            <Row name={d.name} owner="Test" role="N/A" tags={d.tags} category={d.category} date={d.date} required={d.required} contact={d.contact} />
+                                            <Row name={d.name} owner="Test" role="N/A" 
+                                            tags={d.tags} category={d.category} date={convertDate(d.createdAt)} required={d.requirements} contact={d.contact} />
                                             ) }
                                     </tbody>
                                 </table>
@@ -110,5 +110,12 @@ const Table = (props) => {
         </>
     );
 };
+
+const convertDate = (s) => {
+    const date = new Date(s);
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    return date.getDay()-1 + " " + months[date.getMonth()] + ", " + date.getFullYear(); 
+}
+
 
 export default Table;
