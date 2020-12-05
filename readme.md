@@ -5,8 +5,10 @@
 # Stack 📚
 Frontend: **ReactJS** 
 https://reactjs.org/
+
 Backend: **NodeJS**
 https://nodejs.org/en/
+
 Database: **MongoDB**
 https://www.mongodb.com/
 
