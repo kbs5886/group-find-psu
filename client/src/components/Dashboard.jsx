@@ -3,13 +3,19 @@ import Table from "./Dashboard/Table";
 import Nav from "./Dashboard/Nav";
 import CreateGroup from "./Dashboard/CreateGroup";
 import axios from 'axios'
+import { useHistory } from "react-router-dom";
+
 
 const Dashboard = () => {
+    const history = useHistory();
+
     const [showModal, setShowModal] = React.useState(false);
     const [data,setData] = useState([]);
     useEffect(() => {
         axios.get("https://psugroupfind.herokuapp.com/group/all").then(res => {
             setData(res.data);
+        }).catch(err => {
+            history.push("/login");
         })
     },[])
     return (

@@ -2,7 +2,7 @@ const router = require("express").Router();
 const Group = require("../../schemas/Group");
 const checkAuth = require("../../utils/checkAuth");
 
-router.post("/create", async(req,res) => {
+router.post("/create", checkAuth, async(req,res) => {
     console.log(req.headers.cookie)
     let {name, tags, category,requirements,contact} = req.body;
 
@@ -29,7 +29,7 @@ router.post("/create", async(req,res) => {
 
 });
 
-router.get("/all", (req,res) => {
+router.get("/all", checkAuth, (req,res) => {
     Group.find((err,data) => {
         if(err) throw err;
         console.log(data);
