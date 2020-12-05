@@ -72,7 +72,7 @@ router.get("/status", checkAuth, (req, res) => {
 router.get("/name", (req,res) => {
     jwt.verify(req.cookies.token, process.env.JWT_SECRET, (err,decoded) => {
         if (err) return;
-        res.status(200).json(decoded.name)
+        res.status(200).send(decoded.name)
     })
 })
 
