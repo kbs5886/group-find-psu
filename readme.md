@@ -21,7 +21,32 @@ https://www.mongodb.com/
     PORT=
     NODE_ENV=
 
-
+## File Structure 🗄️
+	``
+├── client
+|  ├── cssSource
+|  ├── package-lock.json
+|  ├── package.json
+|  ├── public
+|  ├── README.md
+|  ├── src
+|  ├── tailwind.config.js
+|  └── yarn.lock
+├── output.txt
+├── package-lock.json
+├── package.json
+├── readme.md
+├── routes
+|  ├── auth
+|  └── group
+├── schemas
+|  ├── Group.js
+|  └── User.js
+├── server.js
+└── utils
+   ├── checkAuth.js
+   └── connectDB.js
+	``
 
 ## Installation ⚙️
 
