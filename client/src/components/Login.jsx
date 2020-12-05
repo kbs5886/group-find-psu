@@ -14,7 +14,7 @@ const Login = () => {
     const [error, setError] = useState("");
 
     useEffect(() => {
-        axios.get("/auth/status").then(() => {
+        axios.get("https://psugroupfind.herokuapp.com/auth/status").then(() => {
             console.log("Already logged in...redirecting...");
             history.push("/");
         });

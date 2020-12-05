@@ -11,11 +11,16 @@ const Dashboard = () => {
 
     const [showModal, setShowModal] = React.useState(false);
     const [data,setData] = useState([]);
+    const [name, setName] = useState("");
     useEffect(() => {
         axios.get("https://psugroupfind.herokuapp.com/group/all").then(res => {
             setData(res.data);
         }).catch(err => {
             history.push("/login");
+        })
+
+        axios.get("https://psugroupfind.herokuapp.com/auth/name").then(res => {
+            setName(res);
         })
     },[])
     return (
@@ -32,7 +37,7 @@ const Dashboard = () => {
                         />
                     </div>
                     <div className="ml-2">
-                        <h1 className="text-xl">John Doe</h1>
+                        <h1 className="text-xl">{name}</h1>
                         <p className="font-light uppercase text-xs text-dark-gray">
                             Student
                         </p>
