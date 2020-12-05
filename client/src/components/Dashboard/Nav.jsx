@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
 const Nav = () => {
     const [open, setOpen] = useState(false);
     const [hidden, setHidden] = useState("hidden");
-
+    const history = useHistory();
     const handleOpen = () => {
         if (open) {
             setOpen(false);
@@ -13,6 +15,12 @@ const Nav = () => {
             setHidden("");
         }
     };
+
+    const handleLogout = () => {
+        axios.get("https://psugroupfind.herokuapp.com/auth/logout").then(() => {
+            history.push("/");
+        });
+    }
     return (
         <>
             <nav className="bg-white shadow" role="navigation">
@@ -52,7 +60,7 @@ const Nav = () => {
                                     Dashboard
                                 </a>
                             </li>
-                            <li>
+                            {/* <li>
                                 <a
                                     className="block px-4 py-1 md:p-2 lg:px-4"
                                     href="/profile"
@@ -67,9 +75,9 @@ const Nav = () => {
                                 >
                                     My Groups
                                 </a>
-                            </li>
+                            </li> */}
                         </ul>
-                        <button className="px-4 py-1 font-semibold rounded bg-black text-white">
+                        <button onClick={() => handleLogout()} className="px-4 py-1 font-semibold rounded bg-black text-white">
                             Log Out
                         </button>
                     </div>

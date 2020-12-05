@@ -69,6 +69,11 @@ router.get("/status", checkAuth, (req, res) => {
     });
 });
 
+router.get("/logout", checkAuth, (req,res) => {
+    res.cookie("token", "");
+    res.status(200)
+})
+
 router.get("/name", (req,res) => {
     jwt.verify(req.cookies.token, process.env.JWT_SECRET, (err,decoded) => {
         if (err) return;
